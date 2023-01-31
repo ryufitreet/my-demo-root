@@ -1,0 +1,13 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --color-1: #0D1B2A;
+  --color-2: #1B263B;
+  --color-3: #415A77;
+  --color-4: #778DA9;
+  --color-5: #E0E1DD;
+}
