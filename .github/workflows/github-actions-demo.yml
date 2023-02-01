@@ -22,6 +22,7 @@ jobs:
         uses: garygrossgarten/github-action-scp@v0.8.0
         with:
           local: dist
+          rmRemote: true
           remote: /cdn/my-demo-root
           host: ${{ secrets.BUNDLE_HOST_IP  }}
           username: github
