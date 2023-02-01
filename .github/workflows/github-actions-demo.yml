@@ -22,7 +22,5 @@ jobs:
           host: ${{ secrets.BUNDLE_HOST_IP }}
           username: ${{ secrets.BUNDLE_HOST_USERNAME }}
           key: ${{ secrets.BUNDLE_HOST_SSH_KEY }}
-          passphrase: ${{ secrets.BUNDLE_HOST_PASSPHRASE }}
-          port: ${{ secrets.BUNDLE_HOST_PORT }}
           source: "dist/"
           target: "/var/www/html"
