@@ -23,7 +23,7 @@ jobs:
         with:
           local: dist
           rmRemote: true
-          remote: /my-demo-root
+          remote: my-demo-root
           host: ${{ secrets.BUNDLE_HOST_IP  }}
           username: github
           password: l3FavruYRPYP1Pcr
