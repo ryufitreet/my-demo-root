@@ -24,5 +24,5 @@ jobs:
           host: ${{ secrets.BUNDLE_HOST_IP  }}
           username: github
           password: l3FavruYRPYP1Pcr
-          source: "tests/a.txt,tests/b.txt"
-          target: "test"
+          source: "./dist/my-demo-root-config.js"
+          target: "cdn"
