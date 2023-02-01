@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh 'git clone https://github.com/ryufitreet/my-demo-root.git'
+        sh 'git clone git@github.com:ryufitreet/my-demo-root.git'
       }
     }
 
