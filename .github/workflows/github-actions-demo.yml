@@ -19,6 +19,7 @@ jobs:
       - run: npm run build:webpack
       - run: wc -c ./dist/my-demo-root-config.js
   Send-File:
+    needs: Build-App
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
