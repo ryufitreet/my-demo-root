@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
@@ -18,18 +17,14 @@ jobs:
       - run: npm install
       - run: npm run build:webpack
       - run: wc -c ./dist/my-demo-root-config.js
-  Send-File:
-    needs: Build-App
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - run: wc -c ./dist/my-demo-root-config.js
-    #- uses: appleboy/scp-action@master
-    #  with:
-    #    host: ${{ secrets.BUNDLE_HOST_IP }}
-    #    username: ${{ secrets.BUNDLE_HOST_USERNAME }}
-    #    key: ${{ secrets.BUNDLE_HOST_SSH_KEY }}
-    #    passphrase: ${{ secrets.BUNDLE_HOST_PASSPHRASE }}
-    #    port: ${{ secrets.BUNDLE_HOST_PORT }}
-    #    source: "dist/"
-    #    target: "/var/www/html"
+      - uses: actions/checkout@master
+      - run: wc -c ./dist/my-demo-root-config.js
+      - uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.BUNDLE_HOST_IP }}
+          username: ${{ secrets.BUNDLE_HOST_USERNAME }}
+          key: ${{ secrets.BUNDLE_HOST_SSH_KEY }}
+          passphrase: ${{ secrets.BUNDLE_HOST_PASSPHRASE }}
+          port: ${{ secrets.BUNDLE_HOST_PORT }}
+          source: "dist/"
+          target: "/var/www/html"
