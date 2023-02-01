@@ -17,8 +17,6 @@ jobs:
       - run: npm install
       - run: npm run build:webpack
       - run: wc -c ./dist/my-demo-root-config.js
-      - uses: actions/checkout@master
-      - run: wc -c ./dist/my-demo-root-config.js
       - uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.BUNDLE_HOST_IP }}
